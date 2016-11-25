@@ -1,0 +1,219 @@
+/*customize*/
+.f-content  a {
+  color: #3c3c3c;
+  width: 100%;
+  display: block;
+  position: relative;
+  border-bottom: 1px dashed #ccc;
+}
+.f-content a::before {
+    content: " ";
+    position: absolute;
+    left: -10px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    margin-left: -4px;
+    background: #bbb;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: background;
+}
+.f-content  a:hover {
+  color: #111;
+}
+.f-content p{
+  display:block;
+  border-left: 1px solid #bbb;
+  padding: 0 10px;
+}
+/*圣杯响应式布局参考https://hufan-akari.github.io/solved-by-flexbox/demos/holy-grail/*/
+.f {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.f-header {
+  overflow: hidden;
+  flex: none; /* 2 */
+  background-image: url("../images/bg2.jpg");
+}
+.f-footer {
+  flex: none; /* 2 */
+}
+
+.f-container {
+  display: flex;
+  flex: 1 0 auto; /* 2 */
+  flex-direction: column;
+  padding: 5px;
+}
+
+.f-nav {
+  order: -1;
+}
+
+.f-nav,
+.f-tags {
+  position: relative;
+  flex: 0 0 16em;
+}
+.f-content {
+    flex: 1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+ }
+@media (min-width:768px) {
+  .f-container {
+    flex-direction: row;
+  }
+}
+/*头部*/
+#canvas-container{
+   height:600px;
+   width: 100%;
+}
+canvas {
+   height:600px;
+   width: 100%;
+  cursor: crosshair;
+  display: block;
+  position: relative;
+  z-index: 3;
+}
+canvas:active {
+  cursor: crosshair;
+}
+/*侧边栏*/
+input#show-menu {
+    position: absolute;
+    opacity: 0;
+}
+.hamburguer {
+    left: 0;
+    width: 72px;
+    height: 60px;
+    bottom:0px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburguer span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 24px;
+    background: #000000;
+    opacity: 1;
+    left: 24px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.hamburguer span:nth-child(1) {
+    top: 20px;
+}
+
+.hamburguer span:nth-child(2), .hamburguer span:nth-child(3) {
+    top: 28px;
+}
+
+.hamburguer span:nth-child(4) {
+    top: 36px;
+}
+input#show-menu:checked ~ .hamburguer span:nth-child(1), input#show-menu:checked ~  .hamburguer span:nth-child(4) {
+    top: 28px;
+    width: 0;
+    left: 50%;
+}
+
+input#show-menu:checked ~   .hamburguer span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input#show-menu:checked ~   .hamburguer span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#nav {
+    left: 0;
+    height:auto;
+    width: 100%;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+#nav .site-menu {
+    position: relative;
+    height: 100%;
+}
+#nav a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    padding: 14px 24px;
+    font-weight: 700;
+    
+}
+#nav a:hover{
+  background-color: rgba(218, 213, 203, 0.32);
+}
+
+input#show-menu:checked ~ #nav {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+input#show-menu:checked ~ #canvas #content {
+    -webkit-transform: translate3d(250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
+}
+/*#content {
+    background-color: #fff;
+    overflow-y: scroll;
+    position: relative;
+    left: 0;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    padding: 20px;
+}*/
+
+/*.mask {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s;
+    transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+input#show-menu:checked ~ #canvas .mask {
+    z-index: 1;
+    opacity: 1;
+    -webkit-transform: translate3d(250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+}*/
