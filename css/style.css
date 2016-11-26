@@ -1,35 +1,3 @@
-/*customize*/
-.f-content  a {
-  color: #3c3c3c;
-  width: 100%;
-  display: block;
-  position: relative;
-  border-bottom: 1px dashed #ccc;
-}
-.f-content a::before {
-    content: " ";
-    position: absolute;
-    left: -10px;
-    top: 12px;
-    width: 6px;
-    height: 6px;
-    margin-left: -4px;
-    background: #bbb;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
-    transition-property: background;
-}
-.f-content  a:hover {
-  color: #111;
-}
-.f-content p{
-  display:block;
-  border-left: 1px solid #bbb;
-  padding: 0 10px;
-}
 /*圣杯响应式布局参考https://hufan-akari.github.io/solved-by-flexbox/demos/holy-grail/*/
 .f {
   display: flex;
@@ -44,6 +12,12 @@
 }
 .f-footer {
   flex: none; /* 2 */
+  display:flex;
+  justify-content: center;
+  background-color: rgba(218, 213, 203, 0.32);
+  font-size: 14px;
+  padding:10px 0; 
+
 }
 
 .f-container {
@@ -60,11 +34,12 @@
 .f-nav,
 .f-tags {
   position: relative;
-  flex: 0 0 16em;
+  flex: 0 0 24em;
+  margin: 2em 0;
 }
 .f-content {
     flex: 1;
-    margin: 0;
+    margin: 2em 0;
     display: flex;
     justify-content: center;
  }
@@ -72,6 +47,82 @@
   .f-container {
     flex-direction: row;
   }
+}
+/*customize*/
+.f-content  a {
+  color: rgba(60, 60, 60, 0.78);
+  width: 100%;
+  display: block;
+  position: relative;
+  width: 40em;
+  margin:2em 0;
+  border-bottom: 1px dashed #ccc;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-property: color , border;
+}
+.f-content a::before {
+    content: " ";
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    margin-left: -4px;
+    background: #bbb;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: background;
+}
+.f-content a::after {
+    content:'\27A5';
+    position: absolute;
+    left: 95%;
+    top: -5px;
+    font-size: 20px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: background;
+}
+.f-content a:hover::before {
+    background: #111;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: background;
+}
+.f-content  a:hover {
+  color: #111;
+  border-bottom: 1px dashed #111;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-property: color , border;
+}
+.f-content p a:first-child{
+    font-size:18px;
+    font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-weight: bold;
+    padding:10px 0;
+    border: none;
+}
+.f-content p a:first-child::before{
+    left: -12px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+}
+.f-content p a:first-child::after{
+    display: none;
+}
+.f-content p{
+  display:block;
+  border-left: 1px solid #bbb;
+  padding: 0 10px;
 }
 /*头部*/
 #canvas-container{
@@ -154,66 +205,63 @@ input#show-menu:checked ~   .hamburguer span:nth-child(3) {
     transition: transform 0.5s ease;
     transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
-#nav .site-menu {
+#nav .menu {
     position: relative;
     height: 100%;
 }
+.f-nav .me{
+  position: absolute;
+  left: 150px;
+  top:80px;
+  width: 80px;
+  height: 80px;
+  background-image: url("../images/me.jpg");
+  background-size:cover;
+  border-radius: 50%;
+  opacity: 1;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-property: opacity;
+}
+.f-nav .me::after{
+  content:'学习使我快乐 。。。';
+  position: absolute;
+  left: -10px;
+  width:115px;
+  top: 100px;
+  font-size: 12px;
+  font-style:oblique
+}
+
 #nav a {
     text-decoration: none;
     color: #000000;
     display: block;
     padding: 14px 24px;
     font-weight: 700;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: background-color;
     
 }
 #nav a:hover{
   background-color: rgba(218, 213, 203, 0.32);
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-property: background-color;
 }
 
 input#show-menu:checked ~ #nav {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
-input#show-menu:checked ~ #canvas #content {
-    -webkit-transform: translate3d(250px, 0, 0);
-    transform: translate3d(250px, 0, 0);
-}
-/*#content {
-    background-color: #fff;
-    overflow-y: scroll;
-    position: relative;
-    left: 0;
-    height: 100%;
-    -webkit-transition: -webkit-transform 0.5s ease;
-    transition: -webkit-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    padding: 20px;
-}*/
-
-/*.mask {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+input#show-menu:checked ~ .me {
     opacity: 0;
-    -webkit-transition: opacity 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
-    transition: opacity 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
-    transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s;
-    transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.5);
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: opacity;
 }
-input#show-menu:checked ~ #canvas .mask {
-    z-index: 1;
-    opacity: 1;
-    -webkit-transform: translate3d(250px, 0, 0);
-    transform: translate3d(250px, 0, 0);
-    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
-    transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
-}*/
