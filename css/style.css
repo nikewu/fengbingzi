@@ -8,7 +8,7 @@
 .f-header {
   overflow: hidden;
   flex: none; /* 2 */
-  background-image: url("../images/bg2.jpg");
+  background-image: url("http://od7uqdaje.bkt.clouddn.com/bg2.jpg");
 }
 .f-footer {
   flex: none; /* 2 */
