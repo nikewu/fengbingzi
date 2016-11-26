@@ -1,2 +1,2 @@
 # fengbingzi
-myblog
+[myblog](https://nikewu.github.io/fengbingzi/)
