@@ -384,7 +384,7 @@ var Fireworks = function(){
     
     self.init();
   
-  var initialLaunchCount = 500;
+  var initialLaunchCount = 50;
   while(initialLaunchCount--){
     setTimeout(function(){
         self.fireworks.push(new Firework(self.cw/2, self.ch, rand(50, self.cw-50), rand(50, self.ch/2)-50));

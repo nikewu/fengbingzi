@@ -3,21 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <title>nikewu's blog</title>
-    <meta name="description" content="文章描述，150字以内">
+    <meta name="description" content="nikewu's blog">
+    <meta name="keywords" content="前端,全栈,php,Css,Node.js,JavaScript"  >
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+        .f-content  a {
+        color: rgba(60, 60, 60, 0.78);
+        width: 100%;
+        display: block;
+        position: relative;
+        width: 40em;
+        margin:2em 0;
+        border-bottom: 1px dashed #ccc;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        transition-property: color , border;
+    }
+        .f-content a::before {
+        content: " ";
+        position: absolute;
+        left: -10px;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        margin-left: -4px;
+        background: #bbb;
+        border-radius: 50%;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        transition-property: background;
+    }
+        .f-content a::after {
+        content:'\27A5';
+        position: absolute;
+        left: 96%;
+        top: -5px;
+        font-size: 20px;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        transition-property: background;
+    }
+        .f-content a:hover::before {
+        background: #111;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        transition-property: background;
+    }
+        .f-content  a:hover {
+        color: #111;
+        border-bottom: 1px dashed #111;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        transition-property: color , border;
+    }
+        .f-content p a:first-child{
+        font-size:18px;
+        font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-weight: bold;
+        padding:10px 0;
+        border: none;
+    }
+        .f-content p a:first-child::before{
+        left: -12px;
+        top: 20px;
+        width: 10px;
+        height: 10px;
+    }
+        .f-content p a:first-child::after{
+        display: none;
+    }
+        .f-content p{
+        display:block;
+        border-left: 1px solid #bbb;
+        padding: 0 10px;
+    } 
+    </style>
 </head>
 <body class="f">
-    <header class="f-header">
+    <header class="f-header animated fadeIn">
         <div id="canvas-container">
         </div>                  
     </header>
-    <div class="f-container">
-        <main  class="f-content">
+    <div class="f-container ">
+        <main  class="f-content animated fadeIn ">
 <x-markdown>
 [2016](index.html)
-[2016/11/25  css默认值](示例.html)
+[2016/11/26  css初始化属性初窥](./2016/template.html)
 </x-markdown>            
         </main>
         <nav   class="f-nav">
@@ -30,22 +109,25 @@
             </label> 
             <div id="nav">
                 <ul class="menu">  
-                    <li><a href="#">关于我</a></li>
-                    <li><a href="#">归档</a></li>
-                    <li><a href="#">github</a></li>
+                    <li><a href="aboutMe.html">关于我</a></li>
+                    <li><a href="index.html">归档</a></li>
                 </ul>
             </div>
-            <div class="me"></div>
+            <div class="me animated zoomIn"></div>
         </nav>
-        <aside class="f-tags">
-            
+        <aside class="f-tags  animated fadeIn">
+            <div class="social">              
+                <a class="github" target="_blank" href="https://github.com/nikewu" title="github">github</a>
+                <a class="weibo" target="_blank" href="http://weibo.com/u/3502107333" title="weibo">weibo</a>
+                <a class="mail" target="_blank" href="mailto:862751557@qq.com" title="mail">mail</a>
+            </div>
         </aside>
     </div>
-<footer class="f-footer">Design by fengbingzi © 2016, All Rights Reserved By fengbingzi.</footer>
+<footer data-sr='enter top' class="f-footer">Design by fengbingzi © 2016, All Rights Reserved By fengbingzi.</footer>
 </body>
 </html>
 <script src="js/jquery.min.js"></script>
 <script src="js/dat.gui.min.js"></script>
 <script src="js/marked.min.js"></script>
 <script src="js/main.js"></script>
-<!-- <script src="js/firework.js"></script> -->
+<script src="js/firework.js"></script>

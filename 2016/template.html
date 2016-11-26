@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nikewu's blog</title>
+    <meta name="description" content="nikewu's blog">
+    <meta name="keywords" content="前端,全栈,php,Css,Node.js,JavaScript"  >
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <style>
+        .f-content {
+            justify-content: flex-start;
+            background-color: hsla(31,15%,50%,.1);
+            font-family: Georgia, "Times New Roman", Times, serif;
+            padding: 2em 10em 0 10em;
+        }
+         .f-content p {
+            padding:20px;
+        }
+         .f-content img{
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+            border: 0;
+        }
+         .f-content h1, h2, h3, h4, h5, h6 {
+            padding:10px;
+            font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif
+        }
+         .f-content a{
+            color: #075b8d;
+            text-decoration: none;
+        }
+         .f-content pre{
+            background: #fdf6e3;
+            color: #657b83;
+            word-wrap: normal;
+            word-break: break-all;
+            white-space: pre;
+            overflow: auto;
+        }
+         .f-content ul{
+            list-style: circle;
+        }
+         .f-content a:hover{
+            text-decoration: none;
+            color: #4094c7;
+            outline: 0;
+        }
+    </style>
+</head>
+<body class="f">
+    <div class="f-container">
+        <main  class="f-content animated fadeIn">
+<x-markdown>
+Markdown: Basics （快速入门）
+================
+
+此页提供了 Markdown 的简单概念， [语法说明][s] 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。
+
+[s]: http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md "Markdown Syntax"
+[d]: http://daringfireball.net/projects/markdown/dingus "Markdown Dingus"
+
+其实直接试试看也是一个很不错的方法， [Dingus][d] 是一个网页应用程序，你可以把自已编写的 Markdown 文档转成 XHTML。
+
+## 段落、标题、区块代码 ##
+
+
+</x-markdown>            
+        </main>
+        <nav   class="f-nav">
+            <input type="checkbox" id="show-menu">   
+            <label class="hamburguer" for="show-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </label> 
+            <div id="nav">
+                <ul class="menu">  
+                    <li><a href="../aboutMe.html">关于我</a></li>
+                    <li><a href="../index.html">归档</a></li>
+                </ul>
+            </div>
+            <div class="me animated zoomIn"></div>
+        </nav>
+        <aside class="f-tags animated fadeIn">
+            <div class="social">              
+                <a class="github" target="_blank" href="https://github.com/nikewu" title="github">github</a>
+                <a class="weibo" target="_blank" href="http://weibo.com/u/3502107333" title="weibo">weibo</a>
+                <a class="mail" target="_blank" href="mailto:862751557@qq.com" title="mail">mail</a>
+            </div>
+        </aside>
+    </div>
+<footer class="f-footer">Design by fengbingzi © 2016, All Rights Reserved By fengbingzi.</footer>
+</body>
+</html>
+<script src="../js/marked.min.js"></script>
+<script src="../js/main.js"></script>
